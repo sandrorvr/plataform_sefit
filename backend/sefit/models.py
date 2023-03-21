@@ -31,7 +31,7 @@ class Local(models.Model):
 class EscMensal(models.Model):
     mat = models.ForeignKey(Servidores, on_delete=models.CASCADE)
     function = models.CharField(name='cargo', max_length=30)
-    locataca = models.ForeignKey(Lotacao, on_delete=models.CASCADE)
+    lotacao = models.ForeignKey(Lotacao, on_delete=models.CASCADE)
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
     dt_esc_m = models.DateField(name='data_mensal')
     h_in = models.TimeField(name='hora_inicio')
@@ -55,8 +55,8 @@ class EscOperacao(models.Model):
         return f'{self.operacao.name} - {str(self.dt_op)}'
 
 class Permutas(models.Model):
-    selected = models.ForeignKey(Servidores, on_delete=models.CASCADE)
-    not_selected = models.ForeignKey(Servidores, on_delete=models.CASCADE)
+    selected = models.IntegerField(name='escalado')
+    not_selected = models.IntegerField(name='substituto')
     dt_swap = models.DateField(name='data_permuta')
     dt_creation = models.DateField(name='data_criacao', auto_now=True)
 
@@ -71,9 +71,16 @@ class Faltas(models.Model):
     def __str__(self):
         return f'{self.mat} - {str(self.dt_creation)}'
 
-class Pedidos(models):
+class Pedidos(models.Model):
     mat = models.ForeignKey(Servidores, on_delete=models.CASCADE)
-    
+    tipo = models.CharField(name='tipo', max_length=10)
+    desc = models.TextField()
+    dt_pedido = models.DateField(name='data_pedido')
+    dt_creation = models.DateField(name='data_criacao', auto_now=True)
+    status = models.BooleanField(name='status')
 
+    def __str__(self):
+        return f'{self.mat} - {self.tipo}'
+    
 
 
