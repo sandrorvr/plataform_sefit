@@ -1,18 +1,39 @@
 .container{
   display: grid;
-  height: 100%;
-  grid-template-columns: 1fr 10fr;
-  grid-gap: 2px;
-  background-color: #a1a1a1;
+  height: 100vh;
+  grid-gap: 1rem;
+  grid-template-areas: "sidebar workes chart0"
+                       "sidebar chart1 chart2";
   padding: 10px;
 }
 
 .side-bar{
+  grid-area: sidebar;
+  width: 100%;
   background-color: rgb(104, 104, 104);
-  height: 100vh;
 }
 
-.content{
+
+.findWorkers{
+  width: 100%;
+  grid-area: workes;
   background-color: rgb(226, 226, 226);
-  height: 100vh;
+}
+
+.c0{
+  width: 100%;
+  grid-area: chart0;
+  background-color: rgb(141, 14, 14);
+}
+
+.c1{
+  width: 100%;
+  grid-area: chart1;
+  background-color: rgb(78, 7, 211);
+}
+
+.c2{
+  width: 100%;
+  grid-area: chart2;
+  background-color: rgb(226, 226, 226);
 }
