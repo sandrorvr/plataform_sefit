@@ -2,38 +2,40 @@
   display: grid;
   height: 100vh;
   grid-gap: 1rem;
+  grid-template-columns: 0.3fr 1fr 1fr;
+  
   grid-template-areas: "sidebar workes chart0"
-                       "sidebar chart1 chart2";
-  padding: 10px;
+                       "sidebar areax areax";
 }
 
 .side-bar{
-  grid-area: sidebar;
   width: 100%;
-  background-color: rgb(104, 104, 104);
+  grid-area: sidebar;
+  background-color: rgb(110, 110, 110);
 }
 
 
 .findWorkers{
   width: 100%;
   grid-area: workes;
-  background-color: rgb(226, 226, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .c0{
   width: 100%;
   grid-area: chart0;
-  background-color: rgb(141, 14, 14);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
-.c1{
-  width: 100%;
-  grid-area: chart1;
-  background-color: rgb(78, 7, 211);
+.area{
+  grid-area: areax;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.c2{
-  width: 100%;
-  grid-area: chart2;
-  background-color: rgb(226, 226, 226);
-}

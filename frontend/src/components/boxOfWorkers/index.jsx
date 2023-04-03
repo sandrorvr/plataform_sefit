@@ -19,7 +19,6 @@ function BoxOfWorkers({children}) {
     useEffect(() => {getData()},[]);
 
     return (
-        <div className="App">
             <div className='workers'>
                 <Modal isOpen={stateModal} controllerMoldal={()=>{setStateModal(!stateModal)}}>
                     {children}
@@ -33,7 +32,6 @@ function BoxOfWorkers({children}) {
                     );
                 })}
             </div>
-        </div>
     );
 }
 

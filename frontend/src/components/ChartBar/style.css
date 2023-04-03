@@ -1,8 +1,5 @@
 #boxChartBar{
-    padding: 15px;
     box-shadow: 0px 7px 18px -6px rgba(0,0,0,0.35);
     border-radius: 30px;
-    overflow-y: scroll;
     background-color: white;
-    margin: 1rem;
 }

@@ -31,6 +31,7 @@ function ChartBar(){
           },
         },
         responsive: true,
+        maintainAspectRatio: true,
         scales: {
           x: {
             stacked: true,
@@ -62,9 +63,7 @@ function ChartBar(){
         ],
       };    
       return (
-        <div id='boxChartBar'>
-            <Bar data={data} options={options}></Bar>
-        </div>
+        <Bar data={data} options={options} height={50} width={70}></Bar>
       );
 }
 
