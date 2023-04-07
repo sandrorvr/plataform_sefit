@@ -7,7 +7,7 @@ import ModalForm from './components/modal/modalForm';
 import ChartBar from './components/ChartBar';
 import Table from './components/Table';
 import BoxContainer from './components/BoxContainer';
-
+import WorkOfSchedule from './components/WorkOfSchedule';
 function App() {
 
 
@@ -17,20 +17,8 @@ function App() {
         <section className='side-bar'>
 
         </section>
-        <div className='findWorkers'>
-          <BoxContainer w='24rem' h='13rem'>
-            <BoxOfWorkers>
-              <ModalForm />
-            </BoxOfWorkers>
-          </BoxContainer>
-        </div>
-        <div className='c0'>
-          <BoxContainer w='30rem' h='13rem'>
-            <ChartBar />
-          </BoxContainer>
-        </div>
         <div className='area'>
-            <Table></Table>
+          <WorkOfSchedule></WorkOfSchedule>
         </div>
       </section>
     </div>

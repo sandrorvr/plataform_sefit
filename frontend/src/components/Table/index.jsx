@@ -1,12 +1,12 @@
 import './style.css'
 import data from "./data.json";
 import { Fragment, useState } from 'react';
-
 import { ReadOnlyRow, EditableRow } from './Lines';
+import BoxContainer from "../BoxContainer";
 
 function Table() {
   //Meu src
-  const [contacts, setContacts] = useState(data);
+  const [contacts, setContacts] = useState([]);
   const [addFormData, setAddFormData] = useState({
     fullName: "",
     address: "",
@@ -113,6 +113,7 @@ function Table() {
   };
 
   return (
+    <BoxContainer w='' h=''>
     <div className='app-container'>
       <form onSubmit={handleEditFormSubmit}>
         <table>
@@ -183,6 +184,7 @@ function Table() {
         <button type="submit">Add</button>
       </form>
     </div>
+    </BoxContainer>
   );
 }
 

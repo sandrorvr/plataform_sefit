@@ -4,8 +4,8 @@
   grid-gap: 1rem;
   grid-template-columns: 0.3fr 1fr 1fr;
   
-  grid-template-areas: "sidebar workes chart0"
-                       "sidebar areax areax";
+  grid-template-areas: "sidebar area area"
+                       "sidebar area area";
 }
 
 .side-bar{
@@ -15,27 +15,10 @@
 }
 
 
-.findWorkers{
-  width: 100%;
-  grid-area: workes;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.c0{
-  width: 100%;
-  grid-area: chart0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
 .area{
-  grid-area: areax;
+  width: 100%;
+  grid-area: area;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
