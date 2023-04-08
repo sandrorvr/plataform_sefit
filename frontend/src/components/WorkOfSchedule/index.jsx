@@ -3,8 +3,8 @@ import { Fragment, useState } from "react";
 import Table from "../Table";
 import BoxContainer from "../BoxContainer";
 
-function WorkOfSchedule(){
-    const [roadMap, setRoadMap] = useState([{area:"", id:0}]);
+function WorkOfSchedule({data}){
+    const [roadMap, setRoadMap] = useState(data);
     const [createRoadMap, setcreateRoadMap] = useState({
         area:'',
         sub:'',
@@ -29,9 +29,14 @@ function WorkOfSchedule(){
         <div className="schedule">
                 {roadMap.map((section, index)=>{
                     return(
-                        <div key={index}>
-                            <h3 id={section.id}>{section.area}</h3>
+                        <div key={index} className='group'>
+                            <BoxContainer w='' h=''>
+                            <div id={section.id} className='title-group'>
+                                <span className='id-area'>{section.area}</span>
+                                <h3>{section.desc}</h3>
+                            </div>
                             <Table/>
+                            </BoxContainer>
                         </div>
                     );
                 })}

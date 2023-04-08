@@ -6,7 +6,7 @@ import BoxContainer from "../BoxContainer";
 
 function Table() {
   //Meu src
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(data);
   const [addFormData, setAddFormData] = useState({
     fullName: "",
     address: "",
@@ -113,17 +113,17 @@ function Table() {
   };
 
   return (
-    <BoxContainer w='' h=''>
     <div className='app-container'>
       <form onSubmit={handleEditFormSubmit}>
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Phone Number</th>
-              <th>Email</th>
-              <th>Actions</th>
+              <th>ROTEIRO</th>
+              <th>ENTRADA</th>
+              <th>SAÍDA</th>
+              <th>LOCAL</th>
+              <th>EQUIPAMENTO</th>
+              <th>GUARNICAO</th>
             </tr>
           </thead>
           <tbody>
@@ -184,7 +184,6 @@ function Table() {
         <button type="submit">Add</button>
       </form>
     </div>
-    </BoxContainer>
   );
 }
 

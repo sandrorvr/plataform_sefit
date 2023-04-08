@@ -18,7 +18,15 @@ function App() {
 
         </section>
         <div className='area'>
-          <WorkOfSchedule></WorkOfSchedule>
+          <WorkOfSchedule data={
+            [
+              {
+                area:"Area1", 
+                sup:"Ademário Gomes de Oliveira Junior",
+                id:0, 
+                desc:" Graça - Av. Centenário - Vale do Canela  - Comércio - Centro - Barris -  Garibaldi - Ondina - Barra - Rio Vermelho - Vasco da Gama - Ogunjá - Dique - Bonocô - Luis Anselmo - Sete Portas - Túnel Américo Simas"
+              }
+            ]}/>
         </div>
       </section>
     </div>

@@ -4,10 +4,12 @@ import './style.css';
 export const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
   return (
     <tr>
-      <td>{contact.fullName}</td>
-      <td>{contact.address}</td>
-      <td>{contact.phoneNumber}</td>
-      <td>{contact.email}</td>
+      <td>{contact.roteiro}</td>
+      <td>{contact.entrada}</td>
+      <td>{contact.saida}</td>
+      <td>{contact.local}</td>
+      <td>{contact.equipamento}</td>
+      <td>{contact.guarnicao}</td>
       <td>
         <button onClick={(event) => handleEditClick(event, contact)}
           type="button"
@@ -30,8 +32,8 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
           type="text"
           required="required"
           placeholder="Enter a name..."
-          name="fullName"
-          value={editFormData.fullName}
+          name="roteiro"
+          value={editFormData.roteiro}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -40,8 +42,8 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
           type="text"
           required="required"
           placeholder="Enter an address..."
-          name="address"
-          value={editFormData.address}
+          name="entrada"
+          value={editFormData.entrada}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -50,8 +52,8 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
           type="text"
           required="required"
           placeholder="Enter a phone number..."
-          name="phoneNumber"
-          value={editFormData.phoneNumber}
+          name="saida"
+          value={editFormData.saida}
           onChange={handleEditFormChange}
         ></input>
       </td>
@@ -60,8 +62,18 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
           type="email"
           required="required"
           placeholder="Enter an email..."
-          name="email"
-          value={editFormData.email}
+          name="equipamento"
+          value={editFormData.equipamento}
+          onChange={handleEditFormChange}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="email"
+          required="required"
+          placeholder="Enter an email..."
+          name="guarnicao"
+          value={editFormData.guarnicao}
           onChange={handleEditFormChange}
         ></input>
       </td>
