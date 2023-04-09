@@ -4,9 +4,9 @@ import { Fragment, useState } from 'react';
 import { ReadOnlyRow, EditableRow } from './Lines';
 import BoxContainer from "../BoxContainer";
 
-function Table() {
+function Table({servidores}) {
   //Meu src
-  const [contacts, setContacts] = useState(data);
+  const [contacts, setContacts] = useState(servidores);
   const [addFormData, setAddFormData] = useState({
     fullName: "",
     address: "",
@@ -151,32 +151,38 @@ function Table() {
         </table>
       </form>
 
-      <h2>Add a Contact</h2>
       <form onSubmit={handleAddFormSubmit}>
         <input
           type="text"
-          name="fullName"
+          name="roteiro"
           required="required"
           placeholder="Enter a name..."
           onChange={handleAddFormChange}
         />
         <input
           type="text"
-          name="address"
+          name="entrada"
           required="required"
           placeholder="Enter an addres..."
           onChange={handleAddFormChange}
         />
         <input
           type="text"
-          name="phoneNumber"
+          name="saida"
           required="required"
           placeholder="Enter a phone number..."
           onChange={handleAddFormChange}
         />
         <input
-          type="email"
-          name="email"
+          type="text"
+          name="equipamento"
+          required="required"
+          placeholder="Enter an email..."
+          onChange={handleAddFormChange}
+        />
+        <input
+          type="text"
+          name="guarnicao"
           required="required"
           placeholder="Enter an email..."
           onChange={handleAddFormChange}

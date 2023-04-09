@@ -5,8 +5,8 @@ export const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => 
   return (
     <tr>
       <td>{contact.roteiro}</td>
-      <td>{contact.entrada}</td>
-      <td>{contact.saida}</td>
+      <td>{`${contact.entrada}H`}</td>
+      <td>{`${contact.saida}H`}</td>
       <td>{contact.local}</td>
       <td>{contact.equipamento}</td>
       <td>{contact.guarnicao}</td>
@@ -69,7 +69,7 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
       </td>
       <td>
         <input
-          type="email"
+          type="text"
           required="required"
           placeholder="Enter an email..."
           name="guarnicao"

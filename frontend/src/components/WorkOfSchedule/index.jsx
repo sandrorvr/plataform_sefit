@@ -1,10 +1,22 @@
 import './style.css';
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect} from "react";
 import Table from "../Table";
 import BoxContainer from "../BoxContainer";
 
-function WorkOfSchedule({data}){
-    const [roadMap, setRoadMap] = useState(data);
+function WorkOfSchedule(){
+    const [roadMap, setRoadMap] = useState([]);
+
+    useEffect(() => {
+        getData('08-04-2023')
+      }, [])
+
+    async function getData(date) {
+        const url = 'http://localhost:3000/esc';
+        const res = await fetch(url);
+        const newData = await res.json();
+        const area = await newData.filter((e)=>date === e.date)
+        setRoadMap(area[0].areas);
+      }
     const [createRoadMap, setcreateRoadMap] = useState({
         area:'',
         sub:'',
@@ -35,7 +47,7 @@ function WorkOfSchedule({data}){
                                 <span className='id-area'>{section.area}</span>
                                 <h3>{section.desc}</h3>
                             </div>
-                            <Table/>
+                            <Table servidores={section.servidores}/>
                             </BoxContainer>
                         </div>
                     );
@@ -53,7 +65,7 @@ function WorkOfSchedule({data}){
                         type="text" 
                         name="sup" 
                         required="required" 
-                        placeholder="Set New Area ..."
+                        placeholder="Set boss's name"
                         onChange={addNewRoadMap}
                     />
                     <button type="submit">ADD</button>

@@ -1,0 +1,83 @@
+{
+	"valor":["valor"],
+	"esc":[
+		{
+			"type":"esc_filnal_semana",
+			"date":"08-04-2023",
+			"co_g":"Antonio Neri",
+			"co_":"Antonio Marco Reis",
+			"areas":[
+				{
+					"id": 0,
+					"area": "Area1",
+					"sup": "Ademário Gomes de Oliveira Junior",
+					"desc": " Graça - Av. Centenário - Vale do Canela  - Comércio - Centro - Barris -  Garibaldi - Ondina - Barra - Rio Vermelho - Vasco da Gama - Ogunjá - Dique - Bonocô - Luis Anselmo - Sete Portas - Túnel Américo Simas",
+					"servidores":[
+						{
+							"id":0,
+							"roteiro": "101",
+							"entrada": "8",
+							"saida": "20",
+							"local": "Rótula do Abacaxi",
+							"equipamento":"VTR",
+							"guarnicao": "Reinaldo César Dias Santos"
+						},
+						{
+							"id":1,
+							"roteiro": "101",
+							"entrada": "6",
+							"saida": "18",
+							"local": "Roma",
+							"equipamento":"VTR",
+							"guarnicao": "Elsimar Lima dos Santos"   
+						}
+					]
+				},
+				{
+					"id": 1,
+					"area": "Area2",
+					"sup": "Divair Eloi da Silva ",
+					"desc": "Iguatemi - Nordeste - Santa Cruz - Itaigara - Paralela -  Aeroporto",
+					"servidores":[
+						{
+							"id":0,
+							"roteiro": "201",
+							"entrada": "7",
+							"saida": "19",
+							"local": "Parque Aquático",
+							"equipamento":"VTR",
+							"guarnicao": "José Ronneimilson Romão "
+						},
+						{
+							"id":1,
+							"roteiro": "201",
+							"entrada": "7",
+							"saida": "19",
+							"local": "Parque Aquático",
+							"equipamento":"VTR",
+							"guarnicao": "Evandro Martins da Cruz Junior   "   
+						},
+						{
+							"id":2,
+							"roteiro": "202",
+							"entrada": "5",
+							"saida": "17",
+							"local": "LIP",
+							"equipamento":"VTR",
+							"guarnicao": "Aloisio Reis Santos"
+						},
+						{
+							"id":3,
+							"roteiro": "202",
+							"entrada": "5",
+							"saida": "17",
+							"local": "LIP",
+							"equipamento":"VTR",
+							"guarnicao": "Marcos Paulo Silva Oliveira"   
+						}
+					]
+				}
+			]
+		}
+	]
+}

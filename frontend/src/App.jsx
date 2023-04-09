@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import './App.css'
 
 import BoxOfWorkers from './components/boxOfWorkers';
@@ -8,25 +8,34 @@ import ChartBar from './components/ChartBar';
 import Table from './components/Table';
 import BoxContainer from './components/BoxContainer';
 import WorkOfSchedule from './components/WorkOfSchedule';
+
+//<WorkOfSchedule data={data} servidores={servidores}/>
 function App() {
+  const [data, setData] = useState([]);
+  const [servidores, setservidores] = useState([{}]);
+
+  /*async function getData(date) {
+    const url = 'http://localhost:3000/esc';
+    const res = await fetch(url);
+    const newData = await res.json();
+    const area = await newData.filter((e)=>date === e.date)
+    //const upservidores = await area[0].servidores
+    setData(area[0].areas);
+  }
 
 
+  useEffect(() => {
+    getData('08-04-2023')
+  }, [])*/
+
+  //data={data} servidores={servidores}
   return (
     <div className="App">
       <section className='container'>
         <section className='side-bar'>
-
         </section>
         <div className='area'>
-          <WorkOfSchedule data={
-            [
-              {
-                area:"Area1", 
-                sup:"Ademário Gomes de Oliveira Junior",
-                id:0, 
-                desc:" Graça - Av. Centenário - Vale do Canela  - Comércio - Centro - Barris -  Garibaldi - Ondina - Barra - Rio Vermelho - Vasco da Gama - Ogunjá - Dique - Bonocô - Luis Anselmo - Sete Portas - Túnel Américo Simas"
-              }
-            ]}/>
+          <WorkOfSchedule/>
         </div>
       </section>
     </div>
