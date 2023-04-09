@@ -6,22 +6,26 @@ import BoxContainer from "../BoxContainer";
 
 function Table({servidores}) {
   //Meu src
-  const [contacts, setContacts] = useState(servidores);
+  const [workers, setContacts] = useState(servidores);
   const [addFormData, setAddFormData] = useState({
-    fullName: "",
-    address: "",
-    phoneNumber: "",
-    email: "",
+    roteiro: "",
+    entrada: "",
+    saida: "",
+    local: "",
+    equipamento: "",
+    guarnicao: "",
   });
 
   const [editFormData, setEditFormData] = useState({
-    fullName: "",
-    address: "",
-    phoneNumber: "",
-    email: "",
+    roteiro: "",
+    entrada: "",
+    saida: "",
+    local: "",
+    equipamento: "",
+    guarnicao: "",
   });
 
-  const [editContactId, setEditContactId] = useState(null);
+  const [editWorkerId, setEditContactId] = useState(null);
 
 
   const handleAddFormChange = (event) => {
@@ -39,27 +43,31 @@ function Table({servidores}) {
   const handleAddFormSubmit = (event) => {
     event.preventDefault();
 
-    const newContact = {
+    const newWorker = {
       id: Math.floor(Math.random()*10000),
-      fullName: addFormData.fullName,
-      address: addFormData.address,
-      phoneNumber: addFormData.phoneNumber,
-      email: addFormData.email,
+      roteiro: addFormData.roteiro,
+      entrada: addFormData.entrada,
+      saida: addFormData.saida,
+      local: addFormData.local,
+      equipamento: addFormData.equipamento,
+      guarnicao: addFormData.guarnicao,
     };
 
-    const newContacts = [...contacts, newContact];
-    setContacts(newContacts);
+    const newWorkers = [...workers, newWorker];
+    setContacts(newWorkers);
   };
 
-  const handleEditClick = (event, contact) => {
+  const handleEditClick = (event, worker) => {
     event.preventDefault();
-    setEditContactId(contact.id);
+    setEditContactId(worker.id);
 
     const formValues = {
-      fullName: contact.fullName,
-      address: contact.address,
-      phoneNumber: contact.phoneNumber,
-      email: contact.email,
+      roteiro: worker.roteiro,
+      entrada: worker.entrada,
+      saida: worker.saida,
+      local: worker.local,
+      equipamento: worker.equipamento,
+      guarnicao: worker.guarnicao,
     };
 
     setEditFormData(formValues);
@@ -68,21 +76,23 @@ function Table({servidores}) {
   const handleEditFormSubmit = (event) => {
     event.preventDefault();
 
-    const editedContact = {
-      id: editContactId,
-      fullName: editFormData.fullName,
-      address: editFormData.address,
-      phoneNumber: editFormData.phoneNumber,
-      email: editFormData.email,
+    const editedWorker = {
+      id: editWorkerId,
+      roteiro: editFormData.roteiro,
+      entrada: editFormData.entrada,
+      saida: editFormData.saida,
+      local: editFormData.local,
+      equipamento: editFormData.equipamento,
+      guarnicao: editFormData.guarnicao,
     };
 
-    const newContacts = [...contacts];
+    const newWorkers = [...workers];
 
-    const index = contacts.findIndex((contact) => contact.id === editContactId);
+    const index = workers.findIndex((worker) => worker.id === editWorkerId);
 
-    newContacts[index] = editedContact;
+    newWorkers[index] = editedWorker;
 
-    setContacts(newContacts);
+    setContacts(newWorkers);
     setEditContactId(null);
   };
 
@@ -91,14 +101,14 @@ function Table({servidores}) {
   };
 
 
-  const handleDeleteClick = (contactId) => {
-    const newContacts = [...contacts];
+  const handleDeleteClick = (workerId) => {
+    const newWorkers = [...workers];
 
-    const index = contacts.findIndex((contact) => contact.id === contactId);
+    const index = workers.findIndex((worker) => worker.id === workerId);
 
-    newContacts.splice(index, 1);
+    newWorkers.splice(index, 1);
 
-    setContacts(newContacts);
+    setContacts(newWorkers);
   };
 
   const handleEditFormChange = (event)=>{
@@ -127,23 +137,22 @@ function Table({servidores}) {
             </tr>
           </thead>
           <tbody>
-            {contacts.map((contact) => {
+            {workers.map((worker) => {
               return (
-                <Fragment key={contact.id}>
+                <Fragment key={worker.id}>
                   {
-                    editContactId === contact.id ? 
+                    editWorkerId === worker.id ? 
                     <EditableRow
                       editFormData={editFormData} 
                       handleCancelClick={handleCancelClick} 
                       handleEditFormChange={handleEditFormChange}
                     /> : 
                     <ReadOnlyRow  
-                      contact={contact} 
+                      worker={worker} 
                       handleEditClick={handleEditClick}
                       handleDeleteClick={handleDeleteClick}
                       />
                   }
-                  
                 </Fragment>
               );
             })}
@@ -156,35 +165,42 @@ function Table({servidores}) {
           type="text"
           name="roteiro"
           required="required"
-          placeholder="Enter a name..."
+          placeholder="..."
           onChange={handleAddFormChange}
         />
         <input
           type="text"
           name="entrada"
           required="required"
-          placeholder="Enter an addres..."
+          placeholder="..."
           onChange={handleAddFormChange}
         />
         <input
           type="text"
           name="saida"
           required="required"
-          placeholder="Enter a phone number..."
+          placeholder="..."
+          onChange={handleAddFormChange}
+        />
+        <input
+          type="text"
+          name="local"
+          required="required"
+          placeholder="..."
           onChange={handleAddFormChange}
         />
         <input
           type="text"
           name="equipamento"
           required="required"
-          placeholder="Enter an email..."
+          placeholder="..."
           onChange={handleAddFormChange}
         />
         <input
           type="text"
           name="guarnicao"
           required="required"
-          placeholder="Enter an email..."
+          placeholder="..."
           onChange={handleAddFormChange}
         />
         <button type="submit">Add</button>

@@ -1,22 +1,22 @@
 import React from "react";
 import './style.css';
 
-export const ReadOnlyRow = ({ contact, handleEditClick, handleDeleteClick }) => {
+export const ReadOnlyRow = ({ worker, handleEditClick, handleDeleteClick }) => {
   return (
     <tr>
-      <td>{contact.roteiro}</td>
-      <td>{`${contact.entrada}H`}</td>
-      <td>{`${contact.saida}H`}</td>
-      <td>{contact.local}</td>
-      <td>{contact.equipamento}</td>
-      <td>{contact.guarnicao}</td>
+      <td>{worker.roteiro}</td>
+      <td>{`${worker.entrada}H`}</td>
+      <td>{`${worker.saida}H`}</td>
+      <td>{worker.local}</td>
+      <td>{worker.equipamento}</td>
+      <td>{worker.guarnicao}</td>
       <td>
-        <button onClick={(event) => handleEditClick(event, contact)}
+        <button onClick={(event) => handleEditClick(event, worker)}
           type="button"
         >
           Edit
         </button>
-        <button type="button" onClick={() => handleDeleteClick(contact.id)}>
+        <button type="button" onClick={() => handleDeleteClick(worker.id)}>
           Delete
         </button>
       </td>
@@ -31,7 +31,7 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
         <input
           type="text"
           required="required"
-          placeholder="Enter a name..."
+          placeholder="Enter a road map"
           name="roteiro"
           value={editFormData.roteiro}
           onChange={handleEditFormChange}
@@ -41,7 +41,7 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
         <input
           type="text"
           required="required"
-          placeholder="Enter an address..."
+          placeholder="Enter begin hour..."
           name="entrada"
           value={editFormData.entrada}
           onChange={handleEditFormChange}
@@ -51,7 +51,7 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
         <input
           type="text"
           required="required"
-          placeholder="Enter a phone number..."
+          placeholder="Enter a end hour..."
           name="saida"
           value={editFormData.saida}
           onChange={handleEditFormChange}
@@ -59,9 +59,19 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
       </td>
       <td>
         <input
-          type="email"
+          type="text"
           required="required"
-          placeholder="Enter an email..."
+          placeholder="Enter a local..."
+          name="local"
+          value={editFormData.local}
+          onChange={handleEditFormChange}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="text"
+          required="required"
+          placeholder="Enter an equipment..."
           name="equipamento"
           value={editFormData.equipamento}
           onChange={handleEditFormChange}
@@ -71,7 +81,7 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
         <input
           type="text"
           required="required"
-          placeholder="Enter an email..."
+          placeholder="Enter an worker..."
           name="guarnicao"
           value={editFormData.guarnicao}
           onChange={handleEditFormChange}

@@ -1,5 +1,5 @@
-import './style.css';
 import { Fragment, useState, useEffect} from "react";
+import './style.css';
 import Table from "../Table";
 import BoxContainer from "../BoxContainer";
 
@@ -18,15 +18,25 @@ function WorkOfSchedule(){
         setRoadMap(area[0].areas);
       }
     const [createRoadMap, setcreateRoadMap] = useState({
-        area:'',
-        sub:'',
-        id:''
+        id: '',
+        area: '',
+        sup: '',
+        desc: '',
+        servidores: [],
     });
 
     const submitRoadMap = (event)=>{
         event.preventDefault();
-        const newRoadMap = [...roadMap, createRoadMap];
-        if (createRoadMap) setRoadMap(newRoadMap);
+        const newRoadMap = {
+            id: Math.floor(Math.random()*10000),
+            area: createRoadMap.area,
+            sup: createRoadMap.sup,
+            desc: createRoadMap.desc,
+            servidores: [],
+        }
+        const newRoadMaps = [...roadMap, newRoadMap];
+        console.log(newRoadMaps);
+        if (createRoadMap) setRoadMap(newRoadMaps);
     }
 
     const addNewRoadMap = (event) =>{
@@ -66,6 +76,13 @@ function WorkOfSchedule(){
                         name="sup" 
                         required="required" 
                         placeholder="Set boss's name"
+                        onChange={addNewRoadMap}
+                    />
+                    <input 
+                        type="text" 
+                        name="desc" 
+                        required="required" 
+                        placeholder="Set a description"
                         onChange={addNewRoadMap}
                     />
                     <button type="submit">ADD</button>

@@ -14,21 +14,6 @@ function App() {
   const [data, setData] = useState([]);
   const [servidores, setservidores] = useState([{}]);
 
-  /*async function getData(date) {
-    const url = 'http://localhost:3000/esc';
-    const res = await fetch(url);
-    const newData = await res.json();
-    const area = await newData.filter((e)=>date === e.date)
-    //const upservidores = await area[0].servidores
-    setData(area[0].areas);
-  }
-
-
-  useEffect(() => {
-    getData('08-04-2023')
-  }, [])*/
-
-  //data={data} servidores={servidores}
   return (
     <div className="App">
       <section className='container'>
