@@ -20,7 +20,7 @@ function App() {
         <section className='side-bar'>
         </section>
         <div className='area'>
-          <WorkOfSchedule/>
+          <WorkOfSchedule state={'new'}/>
         </div>
       </section>
     </div>

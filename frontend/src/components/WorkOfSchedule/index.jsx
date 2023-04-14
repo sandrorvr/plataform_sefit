@@ -3,11 +3,54 @@ import './style.css';
 import Table from "../Table";
 import BoxContainer from "../BoxContainer";
 
-function WorkOfSchedule(){
+function WorkOfSchedule({state}){
     const [roadMap, setRoadMap] = useState([]);
 
     useEffect(() => {
-        getData('08-04-2023')
+        if(state != 'new'){
+            getData('08-04-2023')
+        }else{
+            setRoadMap(
+                [
+                    {
+                        "id": 0,
+                        "area": "Area1",
+                        "sup": "",
+                        "desc": "",
+                        "servidores":[]
+                    },
+                    {
+                        "id": 1,
+                        "area": "Area2",
+                        "sup": "",
+                        "desc": "",
+                        "servidores":[]
+                    },
+                    {
+                        "id": 1,
+                        "area": "Area3",
+                        "sup": "",
+                        "desc": "",
+                        "servidores":[]
+                    },
+                    {
+                        "id": 1,
+                        "area": "Area4",
+                        "sup": "",
+                        "desc": "",
+                        "servidores":[]
+                    },
+                    {
+                        "id": 1,
+                        "area": "Area5",
+                        "sup": "",
+                        "desc": "",
+                        "servidores":[]
+                    }
+                ]
+            )
+        }
+        
       }, [])
 
     async function getData(date) {
