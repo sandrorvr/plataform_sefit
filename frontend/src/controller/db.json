@@ -1,0 +1,307 @@
+{
+    "workers":[
+        {
+            "name": "Sandro Ribeiro Dos Santos Junior",
+            "group": "IV",
+            "begin": "13",
+            "finish":"19",
+            "Constraint": "Não Escalar Aos Sábados",
+            "Pedidos":"Não escalar dia 27/04/2023"
+        },
+        {
+            "name": "worker 0",
+            "group": "I",
+            "begin": "6",
+            "finish":"12",
+            "Constraint": "",
+            "Pedidos":""
+        },
+        {
+            "name": "worker 1",
+            "group": "I",
+            "begin": "7",
+            "finish":"13",
+            "Constraint": "",
+            "Pedidos":""
+        },
+        {
+            "name": "worker 2",
+            "group": "I",
+            "begin": "14",
+            "finish":"20",
+            "Constraint": "",
+            "Pedidos":""
+        },
+        {
+            "name": "worker 3",
+            "group": "I",
+            "begin": "7",
+            "finish":"13",
+            "Constraint": "",
+            "Pedidos":""
+        },
+        {
+            "name": "worker 4",
+            "group": "I",
+            "begin": "6",
+            "finish":"12",
+            "Constraint": "",
+            "Pedidos":""
+        },
+        {
+            "name": "worker 5",
+            "group": "I",
+            "begin": "12",
+            "finish":"18",
+            "Constraint": "",
+            "Pedidos":""
+        },
+        {
+            "name": "worker 6",
+            "group": "I",
+            "begin": "14",
+            "finish":"20",
+            "Constraint": "",
+            "Pedidos":""
+        },
+        {
+            "name": "worker 7",
+            "group": "I",
+            "begin": "14",
+            "finish":"20",
+            "Constraint": "",
+            "Pedidos":""
+        }
+        
+    ],
+    "areas":[
+        {
+            "id": 0,
+            "area": "Area1",
+            "desc": "Graça - Av. Centenário - Vale do Canela  - Comércio - Centro - Barris -  Garibaldi - Ondina - Barra - Rio Vermelho - Vasco da Gama - Ogunjá - Dique - Bonocô - Luis Anselmo - Sete Portas - Túnel Américo Simas"
+        },
+        {
+            "id": 1,
+            "area": "Area2",
+            "desc": "Iguatemi - Nordeste - Santa Cruz - Itaigara - Paralela -  Aeroporto"
+        },
+        {
+            "id": 2,
+            "area": "Area3",
+            "desc": "Amaralina - Pituba - Costa Azul - Boca do Rio - Piatã - Itapuã - Stella Mares - Praia do Flamengo"
+        },
+        {
+            "id": 3,
+            "area": "Area4",
+            "desc": "Baixa de Quintas - Barbalho - Lapinha - Liberdade - Pirajá - São Joaquim - Calçada - Roma - Bomfim - Operação Ribeira - Barros Reis - Rótula do Abacaxi - Suburbana - Valéria - todos os bairros à esquerda da BR-324"
+        },
+        {
+            "id": 4,
+            "area": "Area5",
+            "desc": "São Thomé de Paripe - Tubarão"
+        }
+    ],
+    "locais":[
+        {
+            "id":"4A01",
+            "loc":"baixa de quintas"
+        },
+        {
+            "id":"4A02",
+            "loc":"rótula do abacaxi"
+        },
+        {
+            "id":"4A03",
+            "loc":"bonfim"
+        },
+        {
+            "id":"3A01",
+            "loc":"jardim de alah"
+        },
+        {
+            "id":"3A02",
+            "loc":"boca do rio - centro de convenções"
+        },
+        {
+            "id":"3A03",
+            "loc":"piatã-sesc"
+        },
+        {
+            "id":"3A04",
+            "loc":"posto 12 itapuã"
+        },
+        {
+            "id":"1A01",
+            "loc":"centro náutico"
+        },
+        {
+            "id":"1A02",
+            "loc":"largo das sete portas"
+        },
+        {
+            "id":"1A02",
+            "loc":"campo grande"
+        },
+        {
+            "id":"1A03",
+            "loc":"terreiro de jesus"
+        },
+        {
+            "id":"1A04",
+            "loc":"dique do tororó"
+        },
+        {
+            "id":"1A05",
+            "loc":"farol da barra"
+        },
+        {
+            "id":"2A01",
+            "loc":"hiper posto"
+        },
+        {
+            "id":"2A02",
+            "loc":"extra paralela"
+        },
+        {
+            "id":"2A03",
+            "loc":"rodoviária"
+        },
+        {
+            "id":"2A04",
+            "loc":"parque de exposições"
+        },
+        {
+            "id":"2A05",
+            "loc":"parque aquático"
+        },
+        {
+            "id":"2A06",
+            "loc":"lip"
+        },
+        {
+            "id":"5A01",
+            "loc":"são thomé de paripe"
+        },
+        {
+            "id":"5A02",
+            "loc":"tubarão"
+        }
+    ],
+    "escale":[
+        {
+			"type":"esc_filnal_semana",
+			"date":"08-04-2023",
+			"co_g":"Antonio Neri",
+			"co_":"Antonio Marco Reis",
+			"areas":[
+				{
+                    "id": 0,
+                    "area": "Area1",
+                    "desc": "Graça - Av. Centenário - Vale do Canela  - Comércio - Centro - Barris -  Garibaldi - Ondina - Barra - Rio Vermelho - Vasco da Gama - Ogunjá - Dique - Bonocô - Luis Anselmo - Sete Portas - Túnel Américo Simas",
+                    "servidores":[
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "Rótula do Abacaxi",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						},
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						},
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						}
+                    ]
+                },
+                {
+                    "id": 1,
+                    "area": "Area2",
+                    "desc": "Iguatemi - Nordeste - Santa Cruz - Itaigara - Paralela -  Aeroporto",
+                    "servidores":[
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						}
+                    ]
+                },
+                {
+                    "id": 2,
+                    "area": "Area3",
+                    "desc": "Amaralina - Pituba - Costa Azul - Boca do Rio - Piatã - Itapuã - Stella Mares - Praia do Flamengo",
+                    "servidores":[
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						},
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						}
+                    ]
+                },
+                {
+                    "id": 3,
+                    "area": "Area4",
+                    "desc": "Baixa de Quintas - Barbalho - Lapinha - Liberdade - Pirajá - São Joaquim - Calçada - Roma - Bomfim - Operação Ribeira - Barros Reis - Rótula do Abacaxi - Suburbana - Valéria - todos os bairros à esquerda da BR-324",
+                    "servidores":[
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						},
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						}
+                    ]
+                },
+                {
+                    "id": 4,
+                    "area": "Area5",
+                    "desc": "São Thomé de Paripe - Tubarão",
+                    "servidores":[
+                        {
+							"id":0,
+							"entrada": "8",
+							"saida": "20",
+							"local": "",
+							"equipamento":"VTR",
+							"guarnicao": "worker-01"
+						}
+                    ]
+                }
+            ]
+        }
+    ]
+}
