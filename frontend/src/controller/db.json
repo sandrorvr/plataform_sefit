@@ -189,116 +189,163 @@
     ],
     "escale":[
         {
-			"type":"esc_filnal_semana",
-			"date":"08-04-2023",
-			"co_g":"Antonio Neri",
-			"co_":"Antonio Marco Reis",
-			"areas":[
-				{
-                    "id": 0,
-                    "area": "Area1",
-                    "desc": "Graça - Av. Centenário - Vale do Canela  - Comércio - Centro - Barris -  Garibaldi - Ondina - Barra - Rio Vermelho - Vasco da Gama - Ogunjá - Dique - Bonocô - Luis Anselmo - Sete Portas - Túnel Américo Simas",
-                    "servidores":[
+            "id":"A2023M04D18EF01NOP",
+            "data": "2023-04-18",
+            "grupo": "IV",
+            "geral": "Antonio Neri dos Santos",
+            "geral_condutor": null,
+            "coordenadores": [
+                {
+                    "coordenador": "Marcos Nascimento dos Reis",
+                    "condutor": null,
+                    "hora_b": 7,
+                    "hora_e": 19,
+                    "equipamento": "vtr"
+                }
+            ],
+            "areas": [
+                {
+                    "area": "noa",
+                    "supervisores": null,
+                    "roteiros": [
                         {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "Rótula do Abacaxi",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						},
-                        {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						},
-                        {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						}
+                            "roteiro": 13,
+                            "hora_b": 7,
+                            "hora_e": 19,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Pedro Pereira dos Santos Filho",
+                                "Evandro Martins da Cruz Junior"
+                            ]
+                        }
                     ]
                 },
                 {
-                    "id": 1,
-                    "area": "Area2",
-                    "desc": "Iguatemi - Nordeste - Santa Cruz - Itaigara - Paralela -  Aeroporto",
-                    "servidores":[
+                    "area": "area1",
+                    "supervisores": [
                         {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						}
+                            "supervisor": "Celso Guimarães Cardoso",
+                            "condutor": "Adriano Bulhões Moreira",
+                            "hora_b": 6,
+                            "hora_e": 18,
+                            "equipamento": "vtr"
+                        }
+                    ],
+                    "roteiros": [
+                        {
+                            "roteiro": 101,
+                            "hora_b": 7,
+                            "hora_e": 19,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Antonio Lázaro Paranhos",
+                                "Everton de Araújo Dantas"
+                            ]
+                        },
+                        {
+                            "roteiro": 102,
+                            "hora_b": 8,
+                            "hora_e": 20,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Isaque Gomes Alves Nunes",
+                                "Raphael Carlos Silva Azevedo"
+                            ]
+                        },
+                        {
+                            "roteiro": 101,
+                            "hora_b": 7,
+                            "hora_e": 19,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Javam Santos de Carvalho",
+                                "Adilson Cerqueira dos Reis"
+                            ]
+                        },
+                        {
+                            "roteiro": 102,
+                            "hora_b": 8,
+                            "hora_e": 20,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Carlos Patrício Santos",
+                                "Carlos Henrique Costa Cardoso"
+                            ]
+                        },
+                        {
+                            "roteiro": 103,
+                            "hora_b": 6,
+                            "hora_e": 18,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "André Luiz Malaquias Simões",
+                                "Ruy Jorge Pinheiro de Oliveira"
+                            ]
+                        }
                     ]
                 },
                 {
-                    "id": 2,
-                    "area": "Area3",
-                    "desc": "Amaralina - Pituba - Costa Azul - Boca do Rio - Piatã - Itapuã - Stella Mares - Praia do Flamengo",
-                    "servidores":[
+                    "area": "area2",
+                    "supervisores": [
                         {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						},
+                            "supervisor": "Divair Eloi da Silva",
+                            "condutor": null,
+                            "hora_b": 7,
+                            "hora_e": 19,
+                            "equipamento": "mt"
+                        }
+                    ],
+                    "roteiros": [
                         {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						}
-                    ]
-                },
-                {
-                    "id": 3,
-                    "area": "Area4",
-                    "desc": "Baixa de Quintas - Barbalho - Lapinha - Liberdade - Pirajá - São Joaquim - Calçada - Roma - Bomfim - Operação Ribeira - Barros Reis - Rótula do Abacaxi - Suburbana - Valéria - todos os bairros à esquerda da BR-324",
-                    "servidores":[
+                            "roteiro": 201,
+                            "hora_b": 7,
+                            "hora_e": 19,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Alexandro Costa da Fonseca",
+                                "Jadmilton da Paixão Silva"
+                            ]
+                        },
                         {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						},
+                            "roteiro": 202,
+                            "hora_b": 8,
+                            "hora_e": 20,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Monnalisa Moraes Mendes",
+                                "Raimundo de Oliveira Teles"
+                            ]
+                        },
                         {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						}
-                    ]
-                },
-                {
-                    "id": 4,
-                    "area": "Area5",
-                    "desc": "São Thomé de Paripe - Tubarão",
-                    "servidores":[
+                            "roteiro": 203,
+                            "hora_b": 8,
+                            "hora_e": 20,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Edmário Moreira Maia",
+                                "Jorge Ubirajara Silva Souza"
+                            ]
+                        },
                         {
-							"id":0,
-							"entrada": "8",
-							"saida": "20",
-							"local": "",
-							"equipamento":"VTR",
-							"guarnicao": "worker-01"
-						}
+                            "roteiro": 204,
+                            "hora_b": 6,
+                            "hora_e": 18,
+                            "equipamento": "vtr",
+                            "guarnicao": [
+                                "Fábio Conceição Queiros",
+                                "Reinaldo Santos de Jesus"
+                            ]
+                        },
+                        {
+                            "roteiro": 205,
+                            "hora_b": 7,
+                            "hora_e": 19,
+                            "equipamento": "mt",
+                            "guarnicao": [
+                                "Raimundo Luz da Silva",
+                                "Francisco Junior Naves Rabelo"
+                            ]
+                        }
                     ]
                 }
             ]
