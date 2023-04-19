@@ -2,6 +2,7 @@ import { Fragment, useState, useEffect} from "react";
 import './style.css';
 import Table from "../Table";
 import BoxContainer from "../BoxContainer";
+import NewTable from "../newTable";
 
 function WorkOfSchedule({state}){
     const [roadMap, setRoadMap] = useState([]);
@@ -95,13 +96,7 @@ function WorkOfSchedule({state}){
                 {roadMap.map((section, index)=>{
                     return(
                         <div key={index} className='group'>
-                            <BoxContainer w='' h=''>
-                            <div id={section.id} className='title-group'>
-                                <span className='id-area'>{section.area}</span>
-                                <h3>{section.desc}</h3>
-                            </div>
-                            <Table servidores={section.servidores}/>
-                            </BoxContainer>
+                            <NewTable servidores={section.servidores}></NewTable>
                         </div>
                     );
                 })}

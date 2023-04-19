@@ -1,0 +1,58 @@
+.box-area{
+    width: 95%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 3px 22px 59px -30px rgba(0,0,0,0.75);
+}
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.short-title{
+    text-align: center;
+    background-color: rgb(252, 255, 53);
+    margin-right: 0.15rem;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+.title-description{
+    text-align: center;
+    background-color: rgb(88, 88, 88);
+    margin-left: 0.15rem;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    flex: 10;
+}
+
+.box-area form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-area .input-area input{
+    width: 98%;
+}
+
+.input-area table{
+    gap: 10px;
+}
+
+.addGuarnicao{
+    margin-top: 0.7rem;
+}
+
+.addGuarnicao input{
+    width: 98%;
+    margin-left: 2px;
+    margin-right: 2px; 
+}

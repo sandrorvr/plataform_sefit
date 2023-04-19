@@ -1,24 +1,258 @@
-.container{
+*{
+  margin: 0;
+  padding: 0;
+}
+
+button{
+  height: 100%;
+  width: 3rem;
+}
+
+
+#header-escale{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 4rem;
+  margin-bottom: 1rem;
+  background-color: rgb(255, 209, 0);
+  box-shadow: 3px 22px 59px -30px rgba(0,0,0,0.75);
+
+}
+
+#set-date-type{
+  display: flex;
+  flex-direction: column;
+}
+
+#set-date-type input{
+  margin-bottom: 0.3rem;
+}
+
+
+#set-new-area{
+  display: flex;
+}
+
+
+#inputs-area{
+  display: flex;
+  flex-direction: column;
+  margin-right: 0.3rem;
+}
+
+#inputs-area .row:last-child input{
+  display: flex;
+  flex:1;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.config-scale-items{
+  display: flex;
+  align-items: center;
+}
+
+#header-escale form{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#header-escale form > div {
+  box-shadow: 3px 22px 59px -30px rgba(0,0,0,0.75);
+  padding: 0 0.2rem 0 0.2rem;
+}
+
+
+#set-new-area .item-column, 
+#set-newBoos .item-column, 
+#config-scale .item-column{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: 10pt;
+  padding: 0.4rem;
+}
+
+
+
+#container{
   display: grid;
-  height: 100vh;
-  grid-gap: 1rem;
-  grid-template-columns: 0.3fr 1fr 1fr;
-  
-  grid-template-areas: "sidebar area area"
-                       "sidebar area area";
+  grid-template-columns: 10vw 90vw;
+  grid-template-rows: 100vh;
+  grid-template-areas: "sideBar content";
 }
 
 .side-bar{
-  width: 100%;
-  grid-area: sidebar;
-  background-color: rgb(110, 110, 110);
+  grid-area: sideBar;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(163, 163, 163);
+}
+
+.content{
+  grid-area: content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+}
+
+#areas{
+  display: flex;
+  flex-direction: column;
+  width: 60rem;
+  height: 50%;
+  overflow-y: scroll;
+  padding: 1rem;
+  border-radius: 30px;
+  box-shadow: 3px 22px 59px -30px rgba(0,0,0,0.75);
+  margin: 0.1rem;
+}
+#areas::-webkit-scrollbar {
+  width: 0px;
 }
 
 
-.area{
-  width: 100%;
-  grid-area: area;
+.box-area{
+  width: 95%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 22px 59px -30px rgba(0,0,0,0.75);
+}
+
+.title{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.short-title{
+  text-align: center;
+  background-color: rgb(252, 255, 53);
+  margin-right: 0.15rem;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.title-description{
+  text-align: center;
+  background-color: rgb(88, 88, 88);
+  margin-left: 0.15rem;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  flex: 10;
+}
+
+.box-area form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-area .input-area input{
+  width: 98%;
+}
+
+.input-area table{
+  gap: 10px;
+}
+
+
+th{
+  background-color: rgb(115, 148, 255);
+}
+
+tbody td{
+  text-align: center;
+}
+
+
+
+.addGuarnicao{
+  margin-top: 0.7rem;
+}
+
+.addGuarnicao input{
+  width: 98%;
+  margin-left: 2px;
+  margin-right: 2px; 
+}
+
+/*------------------------------------------------*/
+
+#workers{
+  width: 19rem;
+  height: 50%;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 22px 59px -30px rgba(0,0,0,0.75);
+  overflow-y: scroll;
+}
+
+#workers::-webkit-scrollbar {
+  width: 0px;
+}
+
+.worker{
+  box-shadow: 3px 22px 14px -23px rgba(5, 5, 5, 0.75);
+  padding: 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.worker:hover{
+  background-color: rgba(148, 148, 245, 0.5);
+}
+
+.avatar{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100%;
+  background-color: blue;
+  text-align: center;
+  color: aliceblue;
+  margin-right: 1rem;
+}
+
+.metrics{
+  width: 26.5vw;
+  height: 25%;
+  padding: 1rem;
+  margin: 0 0.3rem 0 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 22px 59px -30px rgba(0,0,0,0.75);
+}
+
+.info-workers p, h4{
+  margin-top: 10px;
+  font-size: 10pt;
+  font-family: monospace;
+}
+
+.info-workers span{
+  font-style: italic;
+  font-weight: bold;
 }
