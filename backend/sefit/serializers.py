@@ -38,6 +38,9 @@ class EscMensalSerializers(serializers.ModelSerializer):
         ]
 
 class EscOperacaoSerializers(serializers.ModelSerializer):
+    mat = ServidoresSerializers()
+    operacao = OperacaoSerializers()
+    local = LocalSerializers()
     class Meta:
         model = EscOperacao
         fields = [

@@ -1,9 +1,10 @@
+from datetime import datetime
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from .serializers import ServidoresSerializers
-from .models import Servidores
+from .serializers import ServidoresSerializers, EscOperacaoSerializers
+from .models import Servidores, EscOperacao
 
 
 class ServidoresAPIView(APIView):
@@ -18,4 +19,15 @@ class ServidoresAPIView(APIView):
             servidores = Servidores.objects.filter(name__iregex=arg)
             serializer = ServidoresSerializers(servidores, many=True)
 
+        return Response(serializer.data)
+
+class EscOperacaoAPIView(APIView):
+    def get(self, requests, date='all_date'):
+        if date == 'all_date':
+            escop = EscOperacao.objects.all()
+        else:
+            parse_date = datetime.strptime(date, "%Y-%m-%d")
+            escop = EscOperacao.objects.filter(dt_op=parse_date)
+
+        serializer = EscOperacaoSerializers(escop, many=True)
         return Response(serializer.data)

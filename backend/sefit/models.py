@@ -42,7 +42,7 @@ class EscMensal(models.Model):
         return f'{self.mat.mat} - {str(self.dt_esc_m)}'
 
 class EscOperacao(models.Model):
-    mat = models.ForeignKey(Servidores, on_delete=models.CASCADE)
+    mat = models.ForeignKey(Servidores, related_name='servidores',on_delete=models.CASCADE)
     function = models.CharField(max_length=30)
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
     dt_op = models.DateField()

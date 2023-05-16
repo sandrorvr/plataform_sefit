@@ -56,14 +56,7 @@ function WorkOfSchedule({state}){
         }
         
       }, [])
-
-    async function getData(date) {
-        const url = 'http://localhost:3000/esc';
-        const res = await fetch(url);
-        const newData = await res.json();
-        const area = await newData.filter((e)=>date === e.date)
-        setRoadMap(area[0].areas);
-      }
+      
     const [createRoadMap, setcreateRoadMap] = useState({
         id: '',
         area: '',
