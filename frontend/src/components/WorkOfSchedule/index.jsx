@@ -3,13 +3,16 @@ import './style.css';
 import Table from "../Table";
 import BoxContainer from "../BoxContainer";
 import NewTable from "../newTable";
+import ControllerStateInit from "../../controller/ControllerStateInit";
 
 function WorkOfSchedule({state}){
     const [roadMap, setRoadMap] = useState([]);
 
     useEffect(() => {
         if(state != 'new'){
-            getData('08-04-2023')
+            new ControllerStateInit()
+            .getData()
+            .then((data)=>setRoadMap(data))
         }else{
             setRoadMap(
                 [

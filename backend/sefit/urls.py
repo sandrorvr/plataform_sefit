@@ -1,9 +1,9 @@
 from django.urls import path
 
-from .views import getWorker, ServidoresAPIView
+from .views import ServidoresAPIView
 
 urlpatterns = [
-    path('worker/', getWorker, name='getWorker'),
     path('servidores/', ServidoresAPIView.as_view(), name='servidores'),
-    path('servidores/<int:id>', ServidoresAPIView.as_view(), name='servidores_u')
+    path('servidores/<int:arg>', ServidoresAPIView.as_view(), name='servidores_by_mat'),
+    path('servidores/<str:arg>', ServidoresAPIView.as_view(), name='servidores_by_name'),
 ]
