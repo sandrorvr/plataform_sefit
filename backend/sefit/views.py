@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from .serializers import ServidoresSerializers, EscOperacaoSerializers
-from .models import Servidores, EscOperacao
+from .models import Servidores, EscOperacao, Operacao
 
 
 class ServidoresAPIView(APIView):
@@ -27,7 +27,7 @@ class EscOperacaoAPIView(APIView):
             escop = EscOperacao.objects.all()
         else:
             parse_date = datetime.strptime(date, "%Y-%m-%d")
-            escop = EscOperacao.objects.filter(dt_op=parse_date)
+            escop = EscOperacao.objects.filter(operacao__dt_op=parse_date)
 
         serializer = EscOperacaoSerializers(escop, many=True)
         return Response(serializer.data)

@@ -17,14 +17,14 @@ function App() {
   return (
     <div className="App">
       <section id="container">
-        <div class="side-bar"></div>
-        <div class="content">
+        <div className="side-bar"></div>
+        <div className="content">
             <header id="header-escale">
                 <form action="">
-                    <div id="config-scale" class="config-scale-items">
+                    <div id="config-scale" className="config-scale-items">
                         <div id="set-date-type">
                             <input type="date" name="date" id="date"></input>
-                            <div class="row">
+                            <div className="row">
                             <select name="type-scale" id="type-scale">
                               <option value="fds">Final de Semana</option>
                               <option value="mensal">Mensal</option>
@@ -33,24 +33,24 @@ function App() {
                             </select>
                             </div>
                         </div>
-                        <div class="item-column">
-                            <label for="defaut">Defaut</label>
+                        <div className="item-column">
+                            <label htmlFor="defaut">Defaut</label>
                             <input id="defaut" type="radio" name="config" value="defaut"></input>
                         </div>
-                        <div class="item-column">
-                            <label for="lastScale">Last Scale</label>
+                        <div className="item-column">
+                            <label htmlFor="lastScale">Last Scale</label>
                             <input id="lastScale" type="radio" name="config" value="lastScale"></input>
                         </div>
-                        <div class="item-column">
-                            <label for="empty">Empty</label>
+                        <div className="item-column">
+                            <label htmlFor="empty">Empty</label>
                             <input id="empty" type="radio" name="config" value="empty"></input>
                         </div>
                     </div>
                 </form>
                 <form action="">
-                    <div id="set-new-area" class="">
+                    <div id="set-new-area" className="">
                         <div id="inputs-area">
-                            <div class="row">
+                            <div className="row">
                                 <select name="type-scale" id="type-scale">
                                     <option value="boos">Supervisor</option>
                                     <option value="cood">coordenador</option>
@@ -58,11 +58,11 @@ function App() {
                                     <option value="eqp">Equipamento</option>
                                 </select>
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <input id="newArea" type="text" name="newArea" placeholder="id"></input>
                                 <input id="value" type="text" name="value" placeholder="value"></input>
                             </div>
-                            <div class="row">
+                            <div className="row">
                                 <input id="description" type="text" name="description" placeholder="description"></input>
                             </div>
                         </div>
@@ -74,50 +74,50 @@ function App() {
               <WorkOfSchedule state={''}/>
             </div>
             <section id="workers">
-                <div class="worker">
-                    <div class="avatar">
+                <div className="worker">
+                    <div className="avatar">
                         <span>SJ</span>
                     </div>
                     <span>Sandro Ribiro Dos Santos Junior</span>
                 </div>
-                <div class="worker">
-                    <div class="avatar">
+                <div className="worker">
+                    <div className="avatar">
                         <span>SJ</span>
                     </div>
                     <span>Sandro Ribiro Dos Santos Junior</span>
                 </div>
-                <div class="worker">
-                    <div class="avatar">
+                <div className="worker">
+                    <div className="avatar">
                         <span>SJ</span>
                     </div>
                     <span>Sandro Ribiro Dos Santos Junior</span>
                 </div>
-                <div class="worker">
-                    <div class="avatar">
+                <div className="worker">
+                    <div className="avatar">
                         <span>SJ</span>
                     </div>
                     <span>Sandro Ribiro Dos Santos Junior</span>
                 </div>
-                <div class="worker">
-                    <div class="avatar">
+                <div className="worker">
+                    <div className="avatar">
                         <span>SJ</span>
                     </div>
                     <span>Sandro Ribiro Dos Santos Junior</span>
                 </div>
-                <div class="worker">
-                    <div class="avatar">
+                <div className="worker">
+                    <div className="avatar">
                         <span>SJ</span>
                     </div>
                     <span>Sandro Ribiro Dos Santos Junior</span>
                 </div>
-                <div class="worker">
-                    <div class="avatar">
+                <div className="worker">
+                    <div className="avatar">
                         <span>SJ</span>
                     </div>
                     <span>Sandro Ribiro Dos Santos Junior</span>
                 </div>
             </section>
-            <div class="metrics info-workers">
+            <div className="metrics info-workers">
                 <p><span>Nome: </span>Sandro Ribeiro Dos Santos Junior</p>
                 <p><span>Grupo: </span>IV</p>
                 <p><span>Horário: </span>13:00h - 19:00h</p>
@@ -125,10 +125,10 @@ function App() {
                 <h4>Pedidos: </h4>
                 <p>Não escalar dia 27/04/2023</p>
             </div>
-            <div class="metrics">
+            <div className="metrics">
                 
             </div>
-            <div class="metrics">
+            <div className="metrics">
                 
             </div>
         </div>

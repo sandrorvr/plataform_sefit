@@ -8,79 +8,46 @@ class Servidores(models.Model):
         return self.name
     
 class Operacao(models.Model):
-    name = models.CharField(max_length=25)
-    desc = models.TextField()
+    type_op = models.CharField(max_length=25)
+    dt_op = models.DateField()
+    co_g = models.ForeignKey(Servidores,on_delete=models.CASCADE, null=False, related_name='coo_general')
+    co = models.ForeignKey(Servidores,on_delete=models.CASCADE, null=False, related_name='coo')
 
     def __str__(self):
-        return self.name
+        return f'{self.type_op} - {self.dt_op}'
 
-class Lotacao(models.Model):
-    name = models.CharField(max_length=25)
-    boss = models.ForeignKey(Servidores, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
 
 class Local(models.Model):
     name = models.CharField(max_length=25)
-    desc = models.TextField()
+    desc = models.TextField(blank=True)
 
     def __str__(self):
         return self.name
 
-class EscMensal(models.Model):
-    mat = models.ForeignKey(Servidores, on_delete=models.CASCADE)
-    function = models.CharField(max_length=30)
-    lotacao = models.ForeignKey(Lotacao, on_delete=models.CASCADE)
-    local = models.ForeignKey(Local, on_delete=models.CASCADE)
-    dt_esc_m = models.DateField()
-    h_in = models.TimeField()
-    h_out = models.TimeField()
-    eqp = models.CharField(max_length=20)
+
+class Area(models.Model):
+    area = models.CharField(max_length=25)
+    sup = models.ForeignKey(Servidores, on_delete=models.CASCADE)
+    desc = models.TextField(max_length=270)
 
     def __str__(self):
-        return f'{self.mat.mat} - {str(self.dt_esc_m)}'
+        return self.area
+
 
 class EscOperacao(models.Model):
-    mat = models.ForeignKey(Servidores, related_name='servidores',on_delete=models.CASCADE)
+    area = models.ForeignKey(Area,on_delete=models.CASCADE)
+    servidor = models.ForeignKey(Servidores,on_delete=models.CASCADE)
     function = models.CharField(max_length=30)
     local = models.ForeignKey(Local, on_delete=models.CASCADE)
-    dt_op = models.DateField()
     h_in = models.TimeField()
     h_out = models.TimeField()
+    eqp = models.CharField(max_length=10)
     road_map = models.CharField(max_length=5)
     operacao = models.ForeignKey(Operacao, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.operacao.name} - {str(self.dt_op)}'
+        return f'{self.operacao.type_op} - {str(self.servidor.name)} -'
 
-class Permutas(models.Model):
-    selected = models.IntegerField()
-    not_selected = models.IntegerField()
-    dt_swap = models.DateField()
-    dt_creation = models.DateField(auto_now=True)
-
-    def __str__(self):
-        return f'{self.selected.name} - {self.not_selected.name}'
-
-class Faltas(models.Model):
-    mat = models.ForeignKey(Servidores, on_delete=models.CASCADE)
-    dt_missing= models.DateField()
-    dt_creation = models.DateField(auto_now=True)
-
-    def __str__(self):
-        return f'{self.mat} - {str(self.dt_creation)}'
-
-class Pedidos(models.Model):
-    mat = models.ForeignKey(Servidores, on_delete=models.CASCADE)
-    tipo = models.CharField(max_length=10)
-    desc = models.TextField()
-    dt_pedido = models.DateField()
-    dt_creation = models.DateField(auto_now=True)
-    status = models.BooleanField()
-
-    def __str__(self):
-        return f'{self.mat} - {self.tipo}'
     
 
 
