@@ -21,15 +21,16 @@ class LocalSerializers(serializers.ModelSerializer):
     class Meta:
         model = Local
         fields = [
-            'name', 'desc'
+            'id','name', 'desc'
         ]
 
 
 class AreaSerializers(serializers.ModelSerializer):
+    sup = ServidoresSerializers()
     class Meta:
         model = Area
         fields = [
-            'area','sup','desc'
+            'id','area','sup','desc'
         ]
 
 class EscOperacaoSerializers(serializers.ModelSerializer):
@@ -40,6 +41,6 @@ class EscOperacaoSerializers(serializers.ModelSerializer):
     class Meta:
         model = EscOperacao
         fields = [
-            'operacao','area','servidor','function','local','h_in','h_out','eqp','road_map'
+            'id','operacao','area','servidor','function','local','h_in','h_out','eqp','road_map'
         ]
 

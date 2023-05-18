@@ -98,8 +98,13 @@ function WorkOfSchedule({state}){
         <div className="schedule">
                 {roadMap.map((section, index)=>{
                     return(
-                        <div key={index} className='group'>
-                            <NewTable servidores={section.servidores}></NewTable>
+                        <div key={section.id} className='group'>
+                            <NewTable 
+                                servidores={section.servidores} 
+                                area={section.area}
+                                description={section.desc}
+                                supervision={section.sup}
+                            ></NewTable>
                         </div>
                     );
                 })}

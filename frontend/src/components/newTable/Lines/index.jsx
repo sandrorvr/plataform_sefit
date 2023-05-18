@@ -7,6 +7,7 @@ export const ReadOnlyRow = ({ worker, handleEditClick, handleDeleteClick }) => {
       <td>{worker.roteiro}</td>
       <td>{`${worker.entrada}H`}</td>
       <td>{`${worker.saida}H`}</td>
+      <td>{worker.funcao}</td>
       <td>{worker.local}</td>
       <td>{worker.equipamento}</td>
       <td>{worker.guarnicao}</td>
@@ -64,6 +65,16 @@ export const EditableRow = ({ editFormData, handleCancelClick, handleEditFormCha
           placeholder="Enter a local..."
           name="local"
           value={editFormData.local}
+          onChange={handleEditFormChange}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="text"
+          required="required"
+          placeholder="Enter a function..."
+          name="funcao"
+          value={editFormData.funcao}
           onChange={handleEditFormChange}
         ></input>
       </td>

@@ -3,12 +3,14 @@ import './style.css'
 import { Fragment, useState } from 'react';
 import { ReadOnlyRow, EditableRow } from './Lines';
 
-function NewTable({servidores}) {
+function NewTable({servidores, area, description, supervision}) {
 	const [workers, setContacts] = useState(servidores);
+
   const [addFormData, setAddFormData] = useState({
 	roteiro: "",
 	entrada: "",
 	saida: "",
+	funcao:"",
 	local: "",
 	equipamento: "",
 	guarnicao: "",
@@ -18,6 +20,7 @@ function NewTable({servidores}) {
 	roteiro: "",
 	entrada: "",
 	saida: "",
+	funcao:"",
 	local: "",
 	equipamento: "",
 	guarnicao: "",
@@ -46,6 +49,7 @@ function NewTable({servidores}) {
 	  roteiro: addFormData.roteiro,
 	  entrada: addFormData.entrada,
 	  saida: addFormData.saida,
+	  funcao: addFormData.funcao,
 	  local: addFormData.local,
 	  equipamento: addFormData.equipamento,
 	  guarnicao: addFormData.guarnicao,
@@ -63,6 +67,7 @@ function NewTable({servidores}) {
 	  roteiro: worker.roteiro,
 	  entrada: worker.entrada,
 	  saida: worker.saida,
+	  funcao: worker.funcao,
 	  local: worker.local,
 	  equipamento: worker.equipamento,
 	  guarnicao: worker.guarnicao,
@@ -79,6 +84,7 @@ function NewTable({servidores}) {
 	  roteiro: editFormData.roteiro,
 	  entrada: editFormData.entrada,
 	  saida: editFormData.saida,
+	  funcao: editFormData.funcao,
 	  local: editFormData.local,
 	  equipamento: editFormData.equipamento,
 	  guarnicao: editFormData.guarnicao,
@@ -122,8 +128,8 @@ function NewTable({servidores}) {
 	return (
 		<div className="box-area">
 			<div className="title">
-				<span className="short-title">Area 1</span>
-				<span className="title-description">Nordeste - Iguatemi - Pituba - Jardim dos Namorados</span>
+				<span className="short-title">{area}</span>
+				<span className="title-description">{description}</span>
 			</div>
 			<form className="input-area" onSubmit={handleEditFormSubmit}>
 				<table>
@@ -132,6 +138,7 @@ function NewTable({servidores}) {
 							<th>RoadMap</th>
 							<th>Begin</th>
 							<th>Finish</th>
+							<th>Function</th>
 							<th>Local</th>
 							<th>Equipment</th>
 							<th>Guarnição</th>
@@ -178,6 +185,13 @@ function NewTable({servidores}) {
         <input
           type="text"
           name="saida"
+          required="required"
+          placeholder="..."
+          onChange={handleAddFormChange}
+        />
+		<input
+          type="text"
+          name="funcao"
           required="required"
           placeholder="..."
           onChange={handleAddFormChange}
