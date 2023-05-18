@@ -1,7 +1,6 @@
 import { Fragment, useState, useEffect} from "react";
 import './style.css';
-import Table from "../Table";
-import BoxContainer from "../BoxContainer";
+//import BoxContainer from "../BoxContainer";
 import NewTable from "../newTable";
 import ControllerStateInit from "../../controller/ControllerStateInit";
 
@@ -11,7 +10,7 @@ function WorkOfSchedule({state}){
     useEffect(() => {
         if(state != 'new'){
             new ControllerStateInit()
-            .getData()
+            .createAreas()
             .then((data)=>setRoadMap(data))
         }else{
             setRoadMap(

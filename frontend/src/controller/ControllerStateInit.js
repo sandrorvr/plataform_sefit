@@ -1,10 +1,16 @@
 class ControllerStateInit{
-    constructor(date = '2023-05-20', stateInit='fiveDefault'){
-        this.urlAPI = `http://127.0.0.1:8000/api/v1/operacao/${date}`;
-        this.date = date
+    constructor(){
     }
 
-    createAreas = (data)=>{
+    async getData(url) {
+        const res = await fetch(url);
+        const data = await res.json();
+        return data;
+    }
+
+    async createAreas(date = '2023-05-20'){
+        const url = `http://127.0.0.1:8000/api/v1/operacao/${date}`
+        const data = await this.getData(url)
         const areas = []
         for(let id_area of data.map((el) => el.area.id)){
             const info_only_area = data.filter((el)=>el.area.id === id_area)
@@ -32,17 +38,17 @@ class ControllerStateInit{
         return areas
     }
 
-    async getData() {
-        const res = await fetch(this.urlAPI);
-        const newData = await res.json();
-        console.log(this.createAreas(newData))
-        return this.createAreas(newData);
+
+    async createWorkers(){
+        const url = `http://127.0.0.1:8000/api/v1/servidores/`
+        const data = await this.getData(url)
+        return data.map((servidor)=>{
+            return {
+                name: servidor.name,
+                matricula: servidor.mat
+            }
+        })
     }
-
-
-
-    
-
 }
 
 export default ControllerStateInit;

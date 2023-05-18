@@ -1,15 +1,9 @@
 import { useState, useEffect} from 'react'
 import './App.css'
 
-import BoxOfWorkers from './components/boxOfWorkers';
-import Modal from './components/modal';
-import ModalForm from './components/modal/modalForm';
-import ChartBar from './components/ChartBar';
-import Table from './components/Table';
-import BoxContainer from './components/BoxContainer';
 import WorkOfSchedule from './components/WorkOfSchedule';
+import SelectWorkes from './components/SelectWorkers';
 
-//<WorkOfSchedule data={data} servidores={servidores}/>
 function App() {
   const [data, setData] = useState([]);
   const [servidores, setservidores] = useState([{}]);
@@ -73,63 +67,8 @@ function App() {
             <div id="areas">
               <WorkOfSchedule state={''}/>
             </div>
-            <section id="workers">
-                <div className="worker">
-                    <div className="avatar">
-                        <span>SJ</span>
-                    </div>
-                    <span>Sandro Ribiro Dos Santos Junior</span>
-                </div>
-                <div className="worker">
-                    <div className="avatar">
-                        <span>SJ</span>
-                    </div>
-                    <span>Sandro Ribiro Dos Santos Junior</span>
-                </div>
-                <div className="worker">
-                    <div className="avatar">
-                        <span>SJ</span>
-                    </div>
-                    <span>Sandro Ribiro Dos Santos Junior</span>
-                </div>
-                <div className="worker">
-                    <div className="avatar">
-                        <span>SJ</span>
-                    </div>
-                    <span>Sandro Ribiro Dos Santos Junior</span>
-                </div>
-                <div className="worker">
-                    <div className="avatar">
-                        <span>SJ</span>
-                    </div>
-                    <span>Sandro Ribiro Dos Santos Junior</span>
-                </div>
-                <div className="worker">
-                    <div className="avatar">
-                        <span>SJ</span>
-                    </div>
-                    <span>Sandro Ribiro Dos Santos Junior</span>
-                </div>
-                <div className="worker">
-                    <div className="avatar">
-                        <span>SJ</span>
-                    </div>
-                    <span>Sandro Ribiro Dos Santos Junior</span>
-                </div>
-            </section>
-            <div className="metrics info-workers">
-                <p><span>Nome: </span>Sandro Ribeiro Dos Santos Junior</p>
-                <p><span>Grupo: </span>IV</p>
-                <p><span>Horário: </span>13:00h - 19:00h</p>
-                <p><span>Constraint: </span>Não Escalar Aos Sábados</p>
-                <h4>Pedidos: </h4>
-                <p>Não escalar dia 27/04/2023</p>
-            </div>
-            <div className="metrics">
-                
-            </div>
-            <div className="metrics">
-                
+            <div id='workers'>
+                <SelectWorkes/>
             </div>
         </div>
     </section>
