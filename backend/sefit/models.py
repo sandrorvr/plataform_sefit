@@ -2,7 +2,20 @@ from django.db import models
 
 class Servidores(models.Model):
     mat = models.IntegerField(primary_key=True)
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=45, blank=True, null=True)
+    sexo = models.CharField(max_length=1, blank=True, null=True)
+    tel = models.IntegerField(max_length=11, blank=True, null=True)
+    cpf = models.CharField(max_length=11, blank=True, null=True)
+    admissao = models.DateField(blank=True, null=True)
+    situacao = models.CharField(max_length=10, blank=True, null=True) 
+    gp = models.CharField(max_length=10, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    cnh = models.IntegerField(max_length=10, blank=True, null=True)
+    cat_cnh = models.CharField(max_length=2, blank=True, null=True)
+    bairro = models.CharField(max_length=30, blank=True, null=True)
+    city = models.CharField(max_length=30, blank=True, null=True)
+    esc = models.CharField(max_length=4, blank=True, null=True)
+    esc_detail = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -19,7 +32,7 @@ class Operacao(models.Model):
 
 class Local(models.Model):
     name = models.CharField(max_length=25)
-    desc = models.TextField(blank=True)
+    desc = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name

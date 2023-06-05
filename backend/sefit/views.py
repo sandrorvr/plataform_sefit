@@ -2,24 +2,20 @@ from datetime import datetime
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from rest_framework import generics
 
 from .serializers import ServidoresSerializers, EscOperacaoSerializers
 from .models import Servidores, EscOperacao, Operacao
 
 
-class ServidoresAPIView(APIView):
-    def get(self, requests, arg=None):
-        if arg == None:
-            servidores = Servidores.objects.all()
-            serializer = ServidoresSerializers(servidores, many=True)
-        elif type(arg)==int:
-            servidores = Servidores.objects.get(mat=arg)
-            serializer = ServidoresSerializers(servidores, many=False)
-        elif type(arg)==str:
-            servidores = Servidores.objects.filter(name__iregex=arg)
-            serializer = ServidoresSerializers(servidores, many=True)
+class ServidoresAPIView(generics.ListCreateAPIView):
+    queryset = Servidores.objects.all()
+    serializer_class = ServidoresSerializers
+    
+class ServidorAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Servidores.objects.all()
+    serializer_class = ServidoresSerializers
 
-        return Response(serializer.data)
 
 class EscOperacaoAPIView(APIView):
     def get(self, requests, date='all_date'):

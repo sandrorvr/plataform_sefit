@@ -6,7 +6,8 @@ class ServidoresSerializers(serializers.ModelSerializer):
     class Meta:
         model = Servidores
         fields = [
-            'mat', 'name'
+            'mat', 'name','sexo','tel','cpf','admissao','situacao','gp',
+            'email','cnh','cat_cnh','bairro','city','esc','esc_detail'
         ]
 
 class OperacaoSerializers(serializers.ModelSerializer):
