@@ -1,12 +1,16 @@
 import './style.css'
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import ControllerStateInit from "../../controller/ControllerStateInit";
 
 function SelectWorkes() {
     const [servidores, setServidores] = useState([])
-    new ControllerStateInit()
+
+    useEffect(()=>{
+        new ControllerStateInit()
         .createWorkers()
         .then((servidores) => setServidores(servidores))
+    }, [])
+    
     return (
         <>
             {

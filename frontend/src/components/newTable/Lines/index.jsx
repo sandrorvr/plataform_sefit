@@ -1,16 +1,16 @@
 import React from "react";
 import './style.css';
 
-export const ReadOnlyRow = ({ worker, handleEditClick, handleDeleteClick }) => {
+export const ReadOnlyRow = ({ worker, handleEditClick, handleDeleteClick}) => {
   return (
     <tr>
-      <td>{worker.roteiro}</td>
-      <td>{`${worker.entrada}H`}</td>
-      <td>{`${worker.saida}H`}</td>
-      <td>{worker.funcao}</td>
-      <td>{worker.local}</td>
-      <td>{worker.equipamento}</td>
-      <td>{worker.guarnicao}</td>
+      <td className="line_road">{worker.roteiro}</td>
+      <td className="line_begin">{`${worker.entrada}H`}</td>
+      <td className="line_end">{`${worker.saida}H`}</td>
+      <td className="line_func">{worker.funcao}</td>
+      <td className="line_loc">{worker.local}</td>
+      <td className="line_eqp">{worker.equipamento}</td>
+      <td className="line_wk">{worker.guarnicao}</td>
       <td>
         <button onClick={(event) => handleEditClick(event, worker)}
           type="button"

@@ -67,9 +67,7 @@ function App() {
             <div id="areas">
               <WorkOfSchedule state={''}/>
             </div>
-            <div id='workers'>
-                <SelectWorkes/>
-            </div>
+
         </div>
     </section>
     </div>

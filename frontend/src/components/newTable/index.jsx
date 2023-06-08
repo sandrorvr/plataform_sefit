@@ -155,7 +155,7 @@ function NewTable({servidores, area, description, supervision}) {
                       handleCancelClick={handleCancelClick} 
                       handleEditFormChange={handleEditFormChange}
                     /> : 
-                    <ReadOnlyRow  
+                    <ReadOnlyRow
                       worker={worker} 
                       handleEditClick={handleEditClick}
                       handleDeleteClick={handleDeleteClick}

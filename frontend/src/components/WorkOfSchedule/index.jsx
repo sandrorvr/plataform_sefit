@@ -4,10 +4,36 @@ import './style.css';
 import NewTable from "../newTable";
 import ControllerStateInit from "../../controller/ControllerStateInit";
 
+function getInfoWorkers(){
+    const road = document.getElementsByClassName('line_road')
+    const begin = document.getElementsByClassName('line_begin')
+    const end = document.getElementsByClassName('line_end')
+    const func = document.getElementsByClassName('line_func')
+    const loc = document.getElementsByClassName('line_loc')
+    const eqp = document.getElementsByClassName('line_eqp')
+    const wk = document.getElementsByClassName('line_wk')
+    const result = []
+    for(let line=0; line<road.length; line++){
+        result.push(
+            {
+                road:road[line].innerText,
+                begin: begin[line].innerText,
+                end: end[line].innerText,
+                func: func[line].innerText,
+                loc: loc[line].innerText,
+                eqp: eqp[line].innerText,
+                wk: wk[line].innerText
+            }
+        )
+    }
+    console.log(result)
+}
+
 function WorkOfSchedule({state}){
     const [roadMap, setRoadMap] = useState([]);
 
     useEffect(() => {
+        console.log('start')
         if(state != 'new'){
             new ControllerStateInit()
             .createAreas()
@@ -56,13 +82,6 @@ function WorkOfSchedule({state}){
         
       }, [])
 
-    async function getData(date) {
-        const url = 'http://localhost:3000/esc';
-        const res = await fetch(url);
-        const newData = await res.json();
-        const area = await newData.filter((e)=>date === e.date)
-        setRoadMap(area[0].areas);
-      }
     const [createRoadMap, setcreateRoadMap] = useState({
         id: '',
         area: '',
@@ -133,6 +152,7 @@ function WorkOfSchedule({state}){
                     <button type="submit">ADD</button>
                 </form>
             </div>
+            <button onClick={getInfoWorkers}>GET INFO</button>
         </div>
 
     );

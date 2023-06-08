@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Servidores, Operacao, Local, EscOperacao, Area
+from .models import Servidores, Operacao, Local, EscOperacao, Area, Afastamentos
 
 @admin.register(Servidores)
 class ServidoresAdmin(admin.ModelAdmin):
@@ -25,3 +25,7 @@ class AreaAdmin(admin.ModelAdmin):
 @admin.register(EscOperacao)
 class EscOperacaoAdmin(admin.ModelAdmin):
     list_display = ('operacao','area','servidor','function','local','h_in','h_out','eqp','road_map')
+
+@admin.register(Afastamentos)
+class AfastamentosAdmin(admin.ModelAdmin):
+    list_display = ('servidor','motivo','start','end')

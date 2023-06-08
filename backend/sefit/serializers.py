@@ -1,6 +1,7 @@
-from rest_framework import serializers
+from datetime import date, datetime
 
-from .models import Servidores, Operacao, Local, EscOperacao, Area
+from rest_framework import serializers
+from .models import Servidores, Operacao, Local, EscOperacao, Area, Afastamentos
 
 class ServidoresSerializers(serializers.ModelSerializer):
     class Meta:
@@ -45,3 +46,19 @@ class EscOperacaoSerializers(serializers.ModelSerializer):
             'id','operacao','area','servidor','function','local','h_in','h_out','eqp','road_map'
         ]
 
+
+
+
+class AfastamentosSerializers(serializers.ModelSerializer):
+    servidor = serializers.SlugRelatedField(read_only=True, slug_field='name')
+    count_days = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Afastamentos
+        fields = [
+            'id','servidor','motivo','start','end', 'count_days'
+        ]
+
+    def get_count_days(self, obj):
+        return (obj.end - obj.start).days
+    

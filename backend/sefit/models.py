@@ -61,6 +61,14 @@ class EscOperacao(models.Model):
     def __str__(self):
         return f'{self.operacao.type_op} - {str(self.servidor.name)} -'
 
+class Afastamentos(models.Model):
+    servidor = models.ForeignKey(Servidores,on_delete=models.CASCADE, null=False)
+    motivo = models.CharField(max_length=25, null=False)
+    start = models.DateField(null=False)
+    end = models.DateField(null=False)
+
+    def __str__(self):
+        return f'{self.servidor.name} - {str(self.motivo)}'
     
 
 
